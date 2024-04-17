@@ -13,7 +13,7 @@ services:
     container_name: netprobe-redis
     image: "redis:latest"
     volumes:
-      - ./config/redis/redis.conf:/etc/redis/redis.conf
+      - ./config/redis/:/etc/redis/
     networks:
       - custom_network  # Attach to the custom network
 
@@ -44,7 +44,7 @@ services:
     container_name: netprobe-prometheus
     image: "prom/prometheus"
     volumes:
-      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./config/prometheus/:/etc/prometheus/
     networks:
       - custom_network  # Attach to the custom network
 
