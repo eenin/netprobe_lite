@@ -53,9 +53,9 @@ services:
     image: grafana/grafana-enterprise
     container_name: netprobe-grafana
     volumes:
-      - ./config/grafana/datasources/automatic.yml:/etc/grafana/provisioning/datasources/automatic.yml
-      - ./config/grafana/dashboards/main.yml:/etc/grafana/provisioning/dashboards/main.yml
-      - ./config/grafana/dashboards/netprobe.json:/var/lib/grafana/dashboards/netprobe.json
+      - ./config/grafana/datasources/:/etc/grafana/provisioning/datasources/
+      - ./config/grafana/dashboards/:/etc/grafana/provisioning/dashboards/
+      - ./config/grafana/json/:/var/lib/grafana/dashboards/
     ports:
       - '4000:3000'
     networks:
